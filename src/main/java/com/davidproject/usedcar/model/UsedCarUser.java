@@ -3,7 +3,10 @@ package com.davidproject.usedcar.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,4 +19,6 @@ public class UsedCarUser {
     private Long id;
     private String auth0Id;
     private String email;
+    @OneToMany(mappedBy = "user")
+    private List<Car> cars;
 }
