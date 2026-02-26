@@ -35,7 +35,9 @@ public class Car {
     @Enumerated(EnumType.STRING)
     private CarType carType;
     private Double price;
-    private String image;
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OrderBy("sortOrder ASC, id ASC")
+    private List<CarImage> images = new ArrayList<>();
     private String description;
     @Transient
     private List<Extras> extras = new ArrayList<>();
