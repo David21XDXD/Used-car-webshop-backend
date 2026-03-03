@@ -16,14 +16,6 @@ public class UsedCarApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
     }
 
-    @Bean
-    ApplicationRunner showProps(Environment env) {
-        return args -> {
-            System.out.println("VAULT URL: " + env.getProperty("spring.datasource.url"));
-            System.out.println("VAULT USER: " + env.getProperty("spring.datasource.username"));
-        };
-    }
 }
